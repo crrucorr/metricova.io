@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-foreground font-sans antialiased text-base;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display tracking-tight text-foreground font-semibold;
+  }
+
+  h1 {
+    @apply text-5xl md:text-7xl lg:text-8xl leading-[1.1];
+  }
+
+  h2 {
+    @apply text-4xl md:text-5xl leading-tight;
+  }
+}
+
+@layer utilities {
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, #F5F5F5 1px, transparent 1px),
+      linear-gradient(to bottom, #F5F5F5 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-foreground text-background px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:opacity-90 inline-flex items-center justify-center;
+  }
+  
+  .btn-secondary {
+    @apply bg-background text-foreground border border-foreground/20 px-6 py-3 rounded-lg font-medium transition-all duration-300 hover:bg-foreground/5 inline-flex items-center justify-center;
+  }
+
+  .section-padding {
+    @apply py-24 md:py-32;
+  }
+}
