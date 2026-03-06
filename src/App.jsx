@@ -55,7 +55,10 @@ export default function App() {
       <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
         <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-baseline gap-4">
-            <span className="text-2xl font-display font-bold tracking-tighter">kpidrome.</span>
+            <div className="flex items-center gap-3">
+              <img src="/metricova-logo.png" alt="Metricova Logo" className="w-8 h-8 object-contain" />
+              <span className="text-2xl font-display font-bold tracking-tighter">Metricova.</span>
+            </div>
             <span className="hidden md:inline-block text-sm text-foreground/60 tracking-wide">Serving Mexico & USA</span>
           </div>
           <nav className="hidden lg:flex items-center gap-8 text-sm font-medium">
@@ -159,7 +162,7 @@ export default function App() {
                   {'★'.repeat(5)}
                 </div>
                 <p className="mb-6 tracking-wide leading-relaxed">
-                  "Since partnering with kpidrome, our monthly qualified leads have doubled. The reporting is exactly what they promised: clean and easy to understand."
+                  "Since partnering with Metricova, our monthly qualified leads have doubled. The reporting is exactly what they promised: clean and easy to understand."
                 </p>
                 <div>
                   <p className="font-semibold text-sm">Business Owner {i}</p>
@@ -558,7 +561,10 @@ export default function App() {
       <footer className="bg-background border-t border-border py-12">
         <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-center md:text-left">
-            <span className="text-xl font-display font-bold tracking-tighter">kpidrome.</span>
+            <div className="flex items-center gap-3 justify-center md:justify-start">
+              <img src="/metricova-logo.png" alt="Metricova Logo" className="w-6 h-6 object-contain grayscale opacity-80" />
+              <span className="text-xl font-display font-bold tracking-tighter">Metricova.</span>
+            </div>
             <p className="text-sm text-foreground/50 mt-2">Serving local businesses across Mexico & the USA.</p>
           </div>
           <div className="flex gap-6 text-sm font-medium">
