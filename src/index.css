@@ -3,8 +3,30 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --bg: 255 255 255; /* #FFFFFF */
+    --fg: 0 0 0; /* #000000 */
+    --card-slate: 244 246 248; /* #F4F6F8 */
+    --card-cream: 249 249 249; /* #F9F9F9 */
+    --card-pink: 250 245 244; /* #FAF5F4 */
+    --card-amber: 253 252 240; /* #FDFCF0 */
+    --border: 234 234 234; /* #EAEAEA */
+    --border-subtle: 245 245 245; /* #F5F5F5 */
+  }
+
+  .dark {
+    --bg: 10 10 10; /* #0A0A0A */
+    --fg: 245 245 245; /* #F5F5F5 */
+    --card-slate: 24 24 27; /* #18181B */
+    --card-cream: 20 20 20; /* #141414 */
+    --card-pink: 28 20 20; /* #1C1414 */
+    --card-amber: 28 28 20; /* #1C1C14 */
+    --border: 39 39 42; /* #27272A */
+    --border-subtle: 24 24 27; /* #18181B */
+  }
+
   body {
-    @apply bg-background text-foreground font-sans antialiased text-base;
+    @apply bg-background text-foreground font-sans antialiased text-base transition-colors duration-300;
   }
   
   h1, h2, h3, h4, h5, h6 {
@@ -22,8 +44,8 @@
 
 @layer utilities {
   .bg-grid-pattern {
-    background-image: linear-gradient(to right, #F5F5F5 1px, transparent 1px),
-      linear-gradient(to bottom, #F5F5F5 1px, transparent 1px);
+    background-image: linear-gradient(to right, rgb(var(--border-subtle)) 1px, transparent 1px),
+      linear-gradient(to bottom, rgb(var(--border-subtle)) 1px, transparent 1px);
     background-size: 40px 40px;
   }
 }

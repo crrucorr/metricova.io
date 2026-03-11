@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
@@ -13,13 +13,33 @@ import {
   Target,
   Users,
   CheckCircle2,
-  Briefcase
+  Briefcase,
+  Moon,
+  Sun
 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function App() {
   const containerRef = useRef(null);
+
+  const [isDark, setIsDark] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return localStorage.getItem('theme') === 'dark' ||
+        (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    }
+    return false;
+  });
+
+  useEffect(() => {
+    if (isDark) {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDark]);
 
   useEffect(() => {
     // Subtle GSAP reveals
@@ -70,6 +90,13 @@ export default function App() {
             <a href="#faq" className="hover:text-foreground/70 transition-colors">FAQ</a>
           </nav>
           <div className="flex items-center gap-4">
+            <button
+              onClick={() => setIsDark(!isDark)}
+              className="w-10 h-10 flex items-center justify-center rounded-full border border-border/50 bg-background/50 hover:bg-foreground/5 transition-all text-foreground"
+              aria-label="Toggle Theme"
+            >
+              {isDark ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />}
+            </button>
             <a href="#contact" className="btn-primary py-2.5 px-5 text-sm">
               Schedule <span className="hidden md:inline ml-1">Call</span>
             </a>

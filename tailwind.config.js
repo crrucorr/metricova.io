@@ -4,20 +4,21 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        background: '#FFFFFF',
-        foreground: '#000000',
+        background: 'rgb(var(--bg) / <alpha-value>)',
+        foreground: 'rgb(var(--fg) / <alpha-value>)',
         card: {
-          slate: '#F4F6F8',
-          cream: '#F9F9F9',
-          pink: '#FAF5F4',
-          amber: '#FDFCF0',
+          slate: 'rgb(var(--card-slate) / <alpha-value>)',
+          cream: 'rgb(var(--card-cream) / <alpha-value>)',
+          pink: 'rgb(var(--card-pink) / <alpha-value>)',
+          amber: 'rgb(var(--card-amber) / <alpha-value>)',
         },
         border: {
-          DEFAULT: '#EAEAEA',
-          subtle: '#F5F5F5',
+          DEFAULT: 'rgb(var(--border) / <alpha-value>)',
+          subtle: 'rgb(var(--border-subtle) / <alpha-value>)',
         }
       },
       fontFamily: {
